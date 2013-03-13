@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pragprog Books Online Store</title>
+  <title>Shaving Products</title>
   <%= stylesheet_link_tag    "application", media: "all","data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %><!-- <label id="code.jlt"/> -->
   <%= csrf_meta_tags %><!-- <label id="code.csrf"/> -->
@@ -29,11 +29,16 @@
     </header>
     <div class="container-fluid span12">
       <div class="row-fluid">
-	<div class="span4">
-	<p>hello there</p>
+	<div class="span3">
+	  <ul>
+	    <li>Razors</li>
+	    <li>Brushes</li>
+	    <li>Soaps</li>
+	    <li>Blades</li>
+	  </ul>
 	<!-- sidebar content -->	
 	</div>
-	<div class="span8">
+	<div class="span9">
           <%= yield %><!-- <label id="code.depot.e.include"/> -->
 	</div>
       </div>

@@ -26,6 +26,24 @@ textarea {
 .center h1 {
   margin-bottom: 10px;
 }
-h2{
-  color:#ff9900;
+
+.span3{
+  border-right: 1px dotted #77d;
+	li{
+	   color: #227;
+	   font-size: 120%;
+           font-family: sans-serif;
+	   
+	}
+}
+.carts {
+   .item_price, .total_line {
+   text-align: right;
+   }
+   .total_line .total_cell {
+   font-weight: bold;
+   border-top: 1px solid #595;
+
+  }
+
 }
