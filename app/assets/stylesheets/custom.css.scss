@@ -36,7 +36,7 @@ textarea {
 	   
 	}
 }
-.carts {
+#cart {
    .item_price, .total_line {
    text-align: right;
    }
@@ -45,5 +45,13 @@ textarea {
    border-top: 1px solid #595;
 
   }
+  form, div {
+    display: inline;
+  }  
+  input {
+    font-size: small;
+  }
+  font-size: smaller;
+  padding-right:10px;
 
 }
