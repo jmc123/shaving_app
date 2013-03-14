@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
-  #before_filter :set_cart #i put this as an option around 11.2, he left it out but it caused an error then
+  before_filter :set_cart #i put this as an option around 11.2, he left it out but it caused an error then
   def index
     @products = Product.all
 
