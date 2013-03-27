@@ -3,7 +3,7 @@ TestApp::Application.routes.draw do
 
 
   resources :carts
-  match "/:id" => "store#category"
+  match "/category/:id" => "store#category"
 
 
   get "store/index"
