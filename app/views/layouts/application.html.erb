@@ -13,7 +13,14 @@
           <nav>
             <ul class="nav pull-left">
               <li><%= link_to raw("<i class=\"icon-home icon-white\"></i> Home"), store_path %></li>
-              <li><%= link_to raw("<i class=\"icon-user icon-white\"></i> Sign-In"), '#' %></li>
+              <% if user_signed_in? %>
+              
+              <li><%= link_to raw("<i class=\"icon-user icon-white\"></i> Sign-Out"), destroy_user_session_path, method: :delete %> </li>
+	      <li class="text-info">Signed in as <%= current_user.email %></li> 
+              <% else %>
+              <li><%= link_to raw("<i class=\"icon-user icon-white\"></i> Sign-In"), new_user_session_path %></li>
+              <li><%= link_to raw("<i class=\"icon-user icon-white\"></i> Sign-Up"), new_user_registration_path %></li>
+              <% end %>
             </ul>
 	
 		<form class="navbar-search pull-right">
@@ -27,7 +34,16 @@
       </div>
     </header>
     <div class="container-fluid span12">
+  <p class="alert-error"><%= alert  %></p>
+  <p class="alert-success"><%= notice %></p>
       <div class="row-fluid">
+
+
+
+	<div class="span9">
+           
+          <%= yield %><!-- <label id="code.depot.e.include"/> -->
+	</div>
 	<div class="span3">
           <div id="cart">
           <% if @cart %>
@@ -36,13 +52,7 @@
             <% end %>
 	    <% end %>
           </div>
-          <h3>Categories</h3>
-	  <%= render '/products/categoryDistinctList'%>
-	<!-- sidebar content -->	
-	</div>
-	<div class="span9">
-          <%= yield %><!-- <label id="code.depot.e.include"/> -->
-	</div>
+        </div>
       </div>
     </div>
 

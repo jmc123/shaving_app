@@ -1,7 +1,12 @@
-<% if notice %>
-  <p id="notice"><%= notice %></p>
-<% end %>
-<h1>Shaving Products</h1>
+<div class="span2">
+          
+          <h4>Categories</h4>
+	  <%= render '/products/categoryDistinctList'%>
+          <%=link_to "All products", store_url %>
+	<!-- sidebar content -->	
+</div>
+<div class="span10">
+<h4>Shaving Products</h4>
 <% @products.each do |product| %>
   <div class="entry">
     <%= image_tag(product.image_url) %>
@@ -13,3 +18,4 @@
   </div>
 </div>
 <% end %>
+</div>
