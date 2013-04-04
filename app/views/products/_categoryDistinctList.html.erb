@@ -1,7 +1,8 @@
 <% @items = Product.select('DISTINCT category') %>
 <div class="categoryListAll">
 	<% @items.each do |c|%>
-	  <a href="/category/<%= c.category %>"><%= c.category %></a>
+	  <a href="/category/<%= c.category %>"><i class="icon-arrow-right "></i> <%= c.category %></a>
 	  <br />
 	<%end%>
+        <%=link_to raw("<i class=\"icon-arrow-right\"></i> All Products"), store_index_path %>
 </div>

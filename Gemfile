@@ -8,6 +8,7 @@ gem 'bootstrap-sass', '~>2.3.0.1'
 
 gem 'pg'
 gem 'devise'
+gem 'simple_form'
 
 
 # Gems used only for assets and not required

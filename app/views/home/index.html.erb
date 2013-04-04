@@ -1,0 +1,28 @@
+<div class="row">
+<div class="center hero-unit span12">
+  <h1 class="text-center text-success">Welcome to all your shaving needs</h1></br>
+  <p class="text-center text-info">Feel free to browse our store and in order to add products to the cart you 
+     will need to register with us.</p><br />
+  <a class="btn btn-primary btn-large" href="store/index">Browse Store</a>
+<a href="#myModal" role="button" class="btn btn-success btn-large" data-toggle="modal">Register</a>
+
+<div id="myModal" class="modal hide fade" role="dialog" aria-hidden="true">
+  <div class="modal-body">
+    <%= simple_form_for("user", :url => user_registration_path, method: :post) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :email, :required => true, :autofocus => true %>
+      <%= f.input :password, :required => true %>
+      <%= f.input :password_confirmation, :required => true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up" %>
+  </div>
+<% end %>
+  </div>
+</div>
+  
+</div>
+</div>
