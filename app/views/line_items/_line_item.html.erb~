@@ -3,9 +3,9 @@
 <% else %>
 <tr>
 <% end %>
-<tr>
 	  <td><%= line_item.quantity %>&times;</td>
 	  <td> <%= line_item.product.title %> </td>
 	   <td class="item_price"><%= number_to_currency(line_item.total_price, unit: "&euro;") %></td>
+	  <td><%= button_to raw("<b>X</b>"), line_item , remote: true , method: :delete , class: "btn btn-danger" %></td>
 </tr>
 

@@ -4,7 +4,7 @@
 	  <%= render '/products/categoryDistinctList'%>
 	<!-- sidebar content -->	
 </div>
-<div class="span10">
+<div class="span7">
 <h4>Shaving Products</h4>
 <% @products.each do |product| %>
   <div class="entry">
@@ -20,3 +20,12 @@
 </div>
 <% end %>
 </div>
+<div class="span3">
+          <div id="cart">
+          <% if @cart %>
+            <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+              <%= render @cart %>
+            <% end %>
+	    <% end %>
+          </div>
+        </div>

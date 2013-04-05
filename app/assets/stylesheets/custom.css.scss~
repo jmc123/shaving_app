@@ -59,9 +59,9 @@ textarea {
   padding-top:.80em;
   font-size:1em;
   color: #fff;
-  padding-left:5em;
+  padding-left:0em;
 }
 .input-append{
-  padding-left:30px;
+  padding-left:10px;
 }
 

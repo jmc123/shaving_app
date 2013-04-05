@@ -6,7 +6,7 @@
       
 	<!-- sidebar content -->	
 </div>
-<div class="span7">
+<div class="span6">
 <h4>Shaving Products</h4>
 <% @products.each do |product| %>
   <div class="entry">
@@ -24,7 +24,7 @@
 <% end %>
 
 </div>
-<div class="span3">
+<div class="span4">
           <div id="cart">
           <% if @cart %>
             <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
