@@ -1,4 +1,3 @@
-
 <h4>Your Cart</h4>
   <table>
   <%= render(cart.line_items) %>
@@ -11,4 +10,4 @@
   <%= button_to 'Checkout', cart,  class: "btn btn-primary" %>
 
   <%= button_to 'Empty Cart', cart, remote: true, method: :delete, class: "btn btn-danger", confirm: "Are you sure you want to destroy your cart?" %>
-
+ 

@@ -1,5 +1,6 @@
-<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-          
+
+ <%if @cart.line_items.empty? %>
+<%else%>         
 <h4>Your Cart</h4>
   <table>
   <%= render(cart.line_items) %>
