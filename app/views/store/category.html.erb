@@ -23,7 +23,7 @@
 <div class="span4">
           <div id="cart">
           <% if @cart %>
-            <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+            <%= hidden_div_if(@cart.line_items.empty?) do %>
               <%= render @cart %>
             <% end %>
 	    <% end %>
