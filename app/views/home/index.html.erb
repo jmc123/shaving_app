@@ -4,7 +4,7 @@
     <p class="text-center text-info">Feel free to browse our store and in order to add products to the cart you 
       will need to register with us.</p><br />
     <a class="btn btn-primary btn-large" href="store/index">Browse Store</a>
-    <a href="#myModal" role="button" class="btn btn-success btn-large" data-toggle="modal">Register</a>
+    <a href="/#myModal" role="button" class="btn btn-success btn-large" data-toggle="modal">Register</a>
    </div>
   
 </div>
@@ -24,10 +24,14 @@
       </div>
   
       <div class="form-actions center">
-        <%= f.button :submit, "Sign up", class: "btn btn-primary btn-large" %>
+        <%= f.button :submit, "Sign Up", class: "btn btn-primary btn-large" %><br /><br />
+         <%= link_to 'Already Signed Up? Try Signing In', user_session_path %> <br />
       </div>
- 
+      
+     
+     
       <% end %>
+      
     </div>
 
 

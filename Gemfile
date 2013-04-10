@@ -9,6 +9,9 @@ gem 'bootstrap-sass', '~>2.3.0.1'
 gem 'pg'
 gem 'devise'
 gem 'simple_form'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
 
 
 # Gems used only for assets and not required

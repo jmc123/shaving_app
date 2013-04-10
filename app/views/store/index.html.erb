@@ -22,7 +22,9 @@
   </div>
 </div>
 <% end %>
-
+<div class="pagination-centered pagination-large">
+<%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+</div>
 </div>
 <div class="span4">
           <div id="cart">
