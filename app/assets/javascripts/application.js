@@ -15,3 +15,13 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+$(document).ready(function(){
+  $("#products .pagination a").on("click", function(event){
+    event.preventDefault();
+    $.getScript(this.href);
+   
+  });
+
+});
+

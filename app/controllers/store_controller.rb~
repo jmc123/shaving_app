@@ -2,6 +2,11 @@ class StoreController < ApplicationController
   before_filter :set_cart
   def index
     @products = Product.paginate page: params[:page], per_page: 3, order: :title
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def category
