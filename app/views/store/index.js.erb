@@ -1,2 +1,5 @@
-$('#products').html("<%= escape_javascript render("products") %>");
+$('#products').hide().html("<%= escape_javascript render("products") %>").fadeIn(600);
+
+
+
 $('.pagination a').attr('data-remote', 'true');
