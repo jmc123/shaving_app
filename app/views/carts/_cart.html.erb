@@ -10,7 +10,7 @@
   </tr>
   </table>
   <p></p>
-  <%= button_to 'Checkout', cart,  class: "btn btn-primary" %>
+  <%= button_to 'Checkout', cart, method: :get,  class: "btn btn-primary", confirm: "Are you sure you want to check out?" %>
 
   <%= button_to 'Empty Cart', cart, remote: true, method: :delete, class: "btn btn-danger", confirm: "Are you sure you want to destroy your cart?" %>
   <% end %>

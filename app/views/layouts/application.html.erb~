@@ -21,11 +21,7 @@
 	      <li id="text-info">Signed in as <%= current_user.email %></li> 
             </ul>
        
-	    <form class="navbar-search pull-right">
-                <div class="input-append">	    
-		   <input type="text" class="search-query" placeholder= "Search">
-	        </div>
-	    </form>
+	    
               <% else %>
               
            
@@ -34,12 +30,8 @@
 
              
        
-	     <form class="navbar-search pull-right">
-              <div class="input-append">	    
-		 <input type="text" class="search-query" placeholder= "Search">
-	      </div>
-	     </form>
-	        <form class="navbar-form pull-left" id="form-margin" method="post" action="/users/sign_in">
+	     
+	        <form class="navbar-form pull-right" id="form-margin" method="post" action="/users/sign_in">
 		<%= simple_form_for("user", url: user_session_path) do |f| %>
                   <%= f.text_field :email, class: "span2", placeholder: "Email"%>
 		  <%= f.password_field :password, class: "span2", placeholder: "Password"%>
@@ -90,7 +82,7 @@
   
       <div class="form-actions center">
         <%= f.button :submit, "Sign up", class: "btn btn-primary btn-large" %><br /><br />
-         <%= link_to 'Sign in?', user_session_path %> <br />
+         <%= link_to 'Already Signed Up? Try Signing In', user_session_path %> <br />
       </div>
  
       <% end %>

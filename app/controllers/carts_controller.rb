@@ -20,6 +20,7 @@ class CartsController < ApplicationController
   def show
     @cart = Cart.find(params[:id])
 
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @cart }
@@ -82,7 +83,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to store_url }
+      format.html { redirect_to root_url }
       format.js
       format.json { head :no_content }
     end

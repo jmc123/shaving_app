@@ -1,0 +1,29 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+
+$(document).ready(function(){
+  $("#products .pagination a").on("click", function(event){
+    event.preventDefault();
+    $.getScript(this.href);
+   
+  });
+  $("#search").on("keyup", function(){
+
+  var searchField = $("#search").val();
+  var myExp = new RegExp(searchField,"i");
+  $.getJSON('products.json', function(data){
+    var output = '<table class="searchresults">';
+    
+    $.each(data, function(key, value){
+      if(value.title.search(myExp) != -1){
+      output = output + "<tr>" + "<td>" + /*'<img src="/app/assets/images/' +*/ value.image_url /*+ '">' +*/ + "</td>" + "<td>" + "<h4>" + value.title + "</h4>" + "</td>" + "</tr>";
+    }
+    });
+    
+    output = output + "</table>";
+    $(".span12").hide().html(output).fadeIn(400);
+  });
+
+});
+});

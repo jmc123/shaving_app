@@ -20,8 +20,6 @@ $(document).ready(function(){
   $("#products .pagination a").on("click", function(event){
     event.preventDefault();
     $.getScript(this.href);
-   
-  });
-
+   });
 });
 

@@ -1,12 +1,20 @@
 <p id="notice"><%= notice %></p>
-<h2>Your Cart</h2>
-  <table>
-  <%= render(@cart.line_items) %>
-  <tr class="total_line">
-    <td colspan="2">Total</td>
-    <td class="total_cell"><%= number_to_currency(@cart.total_price, unit: "&euro;") %></td>
-  </tr>
-  </table>
+<h3>Thank you for shopping with us.</h3><br />
+<h4>Confirmation of your order</h4>
+<table class="table table-striped">
+<% @cart.line_items.each do |f|%>
+	<tr>
+		<td><%= f.quantity %>&times;</td>
+                 <td> <%= f.product.title %> </td>
+		<td><%= number_to_currency(f.total_price, unit: "&euro;") %></td>
+   	</tr>
+<% end %>
+	<tr class="success">
+		<td colspan="2"><strong>Total</strong></td>
+		<td><strong><%= number_to_currency(@cart.total_price, unit: "&euro;") %></strong></td>
+	</tr>
+</table>
 
-  <%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
-
+<div>	
+<%= button_to 'Return to Home Page', root_path, class: "btn btn-primary" %>
+</div>

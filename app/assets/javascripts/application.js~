@@ -17,11 +17,28 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $("#products .pagination a").on("click", function(e){
-   
+  $("#products .pagination a").on("click", function(event){
+    event.preventDefault();
     $.getScript(this.href);
    
   });
+  $("#search").on("keyup", function(){
 
+  var searchField = $("#search").val();
+  var myExp = new RegExp(searchField,"i");
+  $.getJSON('products.json', function(data){
+    var output = '<ul class="searchresults">';
+    
+    $.each(data, function(key, value){
+      if(value.title.search(myExp) != -1){
+      output = output + '<li>' + '<img src="../images/' + value.image_url + '"/>' + '<span>' + value.title + '</span>' + '</li>';
+    }
+    });
+    
+    output = output + '</ul>';
+    $(".span12").hide().html(output).fadeIn(400);
+  });
+
+});
 });
 
